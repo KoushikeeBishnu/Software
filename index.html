@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="bgImage"></div>
+    <div class="navbar">
+        <div class="button home">HOME</div>
+        <div class="button aboutUs"> ABOUT US</div>
+        <div class="button contactUs">CONTACT US</div>
+    </div>
+    <form class="popup-login">
+        <div class="popup-login-content">
+            <img class="close1" src="close.png" alt="close">
+            <img class="icon" src="./icon.png" alt="icon">
+            <br> <br><br>
+            <input class="signin-email" type="text" placeholder="Email Address" required/>
+            <input class="signin-password" type="password" placeholder="Password" required/>  <br>
+            <button class="authButton" type="submit">LOGIN</button> <br> <br>
+            <div class="bottom">
+                <a href="#" class="noaccount" style="text-decoration: none;"> Don't have an account ?</a>
+            </div>
+            <span class="or">OR</span>
+            <div class="social-login">
+                <img class="authButton1" src="loging.jpg" alt="login with Google" />
+                <img class="authButton2" src="loginfb.jpg" alt="login with fb" />
+            </div>
+            <div class="copyright">
+                By logging in, you accept all the terms and conditions of the app.
+            </div>
+        </div>
+    </form>
+
+    
+
+    <form class="popup-signup">
+    <div class="popup-signup-content">
+        <img class="close2" src="close.png" alt="close">
+        <img class="icon" src="./icon.png" alt="icon">
+        <input class="signup-email" id="signup-email" type="text" placeholder="Email" required/>
+        <input class="signup-contact" id="signup-contact" type="text" placeholder="Contact" required/>
+        <input class="signup-username" id="signup-username" type="text" placeholder="Username" required/>
+        <input class="signup-password" id="signup-password" type="password" placeholder="Password" required/>
+        <input class="signup-retype-password" id="signup-retype-password" type="password" placeholder="Confirm Password" required/>
+        <button class="authButton" type="submit">Sign Up</button> <br>
+        <span class="marginset">OR</span>
+        <div class="social-login">
+            <img class="authButton3" src="loging.jpg" alt="login with Google" />
+            <img class="authButton4" src="loginfb.jpg" alt="login with fb" />
+        </div>
+        <div class="terms">
+            As you sign up, you accept all the terms and conditions of the app.
+        </div>
+    </div>
+</form>
+
+
+
+    <div class="taglinebox">
+        <div class="logo">Book Movie Tickets</div>
+    </div>
+    <div class="signInbox">
+        <div class="boxButton login">Login</div>
+        <div class="boxButton signup">Sign Up</div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+  
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpIzbIcBGa5_t8OdeNYHF_XkHPjW61g24",
+            authDomain: "multiplex-ticket-booking-3762b.firebaseapp.com",
+            projectId: "multiplex-ticket-booking-3762b",
+            storageBucket: "multiplex-ticket-booking-3762b.appspot.com",
+            messagingSenderId: "359882227351",
+            appId: "1:359882227351:web:16bc19f84fdb143e18b3d2",
+            measurementId: "G-L4DGNEWG0F"
+        };
+  
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+  
+        // class BoxButtonSignup {
+        //    async signup(email,password) {
+             
+                
+  
+        //         //  if (password !== confirmPassword) {
+        //         //         // Passwords don't match, display error message
+        //         //         const errorMessage = document.getElementById('signup-error');
+        //         //         errorMessage.textContent = "Passwords do not match.";
+        //         //         return;
+        //         //     }
+
+  
+        //         //  const userCredential = auth.createUserWithEmailAndPassword(email, password);
+        //          auth.createUserWithEmailAndPassword(email,password)
+        //          const user = userCredential.user;
+        //          const user_data = {
+        //             email: email,
+        //             contact: contact,
+        //             username: username,
+        //             password: password,
+        //             last_login: Date.now()
+        //          };
+  
+        //          const database_ref = ref(database);
+        //          set(ref(database, 'user/' + user.uid), user_data);
+        //          alert('User created!');
+              
+        //    }
+        // }
+  
+        // const boxButtonSignup = new BoxButtonSignup();
+  
+        // document.querySelector(".boxButton.signup").addEventListener("click", function () {
+        //          const email = document.getElementById('signup-email').value;
+        //          const contact = document.getElementById('signup-contact').value;
+        //          const username = document.getElementById('signup-username').value;
+        //          const password = document.getElementById('signup-password').value;
+        //          const confirmPassword = document.getElementById('signup-retype-password').value;
+        //    boxButtonSignup.signup(email,password);
+        // });
+     </script>
+</body>
+</html>
