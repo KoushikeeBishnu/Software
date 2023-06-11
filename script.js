@@ -51,10 +51,8 @@ document.querySelector(".authButton4").addEventListener("click", function () {
 });
 
 const signIn = document.querySelector(".popup-login");
-if(signIn)
-{
 
-signIn.addEventListener("submit", async (event) => {
+signIn.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const loginEmail = document.querySelector(".signin-email");
@@ -63,27 +61,26 @@ signIn.addEventListener("submit", async (event) => {
   const email = loginEmail.value;
   const password = loginPassword.value;
 
-  try {
-    const userCredential = await firebase.auth().signInWithEmailAndPassword(loginemail, loginpassword);
-    // Sign-in successful, you can access the user with userCredential.user
+  // Perform login logic here without API authentication
+
+  // Example logic:
+  if (email === "example@example.com" && password === "password") {
     localStorage.setItem("jwt", "example_token");
     location.href = "./Movie Page/index.html";
-  } catch (error) {
-    // Handle sign-in errors here
-    alert("Sign in failed. Please try again.");
-  }
-
-  return false; // Return false to prevent the form submission from refreshing the page
+  } 
+  // else {
+  //   alert("Sign in again");
+  // }
 });
-}
-
 
 const signUp = document.querySelector(".popup-signup");
 
-signUp.addEventListener("submit", async (event) => {
+signUp.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const email = document.querySelector(".signup-email").value;
+  const name = document.querySelector(".signup-username").value;
+  const contact = document.querySelector(".signup-contact").value;
   const password = document.querySelector(".signup-password").value;
   const retypepassword = document.querySelector(".signup-retype-password").value;
 
@@ -92,15 +89,9 @@ signUp.addEventListener("submit", async (event) => {
     return;
   }
 
-  try {
-    const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
-    // Sign-up successful, you can access the user with userCredential.user
-    localStorage.setItem("jwt", "example_token");
-    location.href = "./Movie Page/index.html";
-  } catch (error) {
-    // Handle sign-up errors here
-    alert("Sign up failed. Please try again.");
-  }
+  // Perform sign up logic here without API authentication
 
-  return false; // Return false to prevent the form submission from refreshing the page
+  // Example logic:
+  localStorage.setItem("jwt", "example_token");
+  location.href = "./Movie Page/index.html";
 });
